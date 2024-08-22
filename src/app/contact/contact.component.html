@@ -1,0 +1,58 @@
+<div class="main-container">
+  <i class="fa-solid fa-at contact-icon"></i>
+  
+  <div class="content">
+    <form class="form" [formGroup]="contactForm" (ngSubmit)="submit()">
+      <div class="form-group" [class.focused]="nameFocused">
+        <label for="name" class="form-label" [class.has-content]="hasContentName" >Name</label>
+        <div class="form-control-box">
+          <i class="fa-solid fa-user form-control-icon"></i>
+          <input type="text" class="form-control" id="name" [(ngModel)]="user.name" formControlName="name"
+          (focus)="nameFocused = true" 
+          (blur)="checkContentName()" 
+          >
+        </div>
+      </div>
+      <div class="form-group" [class.focused]="emailFocused">
+        <label for="email" class="form-label" [class.has-content]="hasContentEmail">Email</label>
+        <div class="form-control-box">
+          <i class="fa-solid fa-at form-control-icon"></i>
+          <input type="email" class="form-control" id="email" [(ngModel)]="user.email" formControlName="email"
+          (focus)="emailFocused = true" 
+          (blur)="checkContentEmail()" 
+          >
+        </div>
+      </div>
+      <div class="form-group" [class.focused]="subjectFocused">
+        <label for="subject" class="form-label" [class.has-content]="hasContentSubject">Subject</label>
+        <div class="form-control-box">
+          <i class="fa-solid fa-envelope form-control-icon"></i>
+          <input type="text" class="form-control" id="subject" [(ngModel)]="user.subject" formControlName="subject"
+          (focus)="subjectFocused = true" 
+          (blur)="checkContentSubject()" 
+          >
+        </div>
+      </div>
+      <div class="form-group" [class.focused]="messageFocused">
+        <label for="message" class="form-label" [class.has-content]="hasContentMessage">Message</label>
+        <div class="form-control-box-textarea">
+          <div class="icon-box">
+            <i class="fa-solid fa-message form-control-icon-textarea" [(ngModel)]="user.message"></i>            
+          </div>
+          <textarea class="textarea" rows="5" id="message" formControlName="message"
+          (focus)="messageFocused = true" 
+          (blur)="checkContentMessage()" 
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-check form-group">
+        <input type="checkbox" class="form-check-input" id="check" [(ngModel)]="user.isChecked" formControlName="isChecked">
+        <label class="form-check-label" for="check">Accept the Data Handling Terms and Conditions</label>
+      </div>
+      <div class="form-btn">
+        <button type="submit" class="btn btn-submit"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </form>
+  </div>
+
+</div>

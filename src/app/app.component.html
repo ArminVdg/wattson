@@ -1,0 +1,84 @@
+
+
+<main class="main">
+  <div class="content">
+    <div class="hamburger" (click)="toggleMenu()">
+      <i class="fa fa-bars icon"></i>
+    </div>
+    <div class="left-side"  [ngClass]="{ 'show': menuVisible }">
+      <div class="menu">
+        <a class="nav-item" routerLink="/about"
+        [class.active]="activeTab === 'about'"
+        (click)="addTab(tabAbout)"
+        >
+          <i class="fa-regular fa-user icon"></i>
+        </a>
+        <a class="nav-item" routerLink="/education" 
+        [class.active]="activeTab === 'education'"
+        (click)="addTab(tabEducation)">
+          <i class="fa-solid fa-folder-closed icon"></i>
+        </a>
+        <a class="nav-item" routerLink="/experiences" 
+        [class.active]="activeTab === 'experiences'"
+        (click)="addTab(tabExperiences)">
+          <i class="fa-solid fa-folder-tree icon"></i>
+        </a>
+        <a class="nav-item" routerLink="/references" 
+        [class.active]="activeTab === 'references'"
+        (click)="addTab(tabReferences)">
+          <i class="fa-solid fa-meteor icon"></i>
+        </a>
+        <a class="nav-item" routerLink="/contact" 
+        [class.active]="activeTab === 'contact'"
+        (click)="addTab(tabContact)">
+          <i class="fa-solid fa-paper-plane icon"></i>
+        </a>
+        <a class="nav-item" href="../assets/VAA_CV_2024.pdf" target="_blank">
+          <i class="fa-solid fa-floppy-disk icon"></i>
+        </a>
+
+      </div>
+     
+
+
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+
+
+    <div class="right-side">
+      <div class="tabs">
+        <div *ngFor="let tab of tabs" class="tab" [class.active]="activeTab === tab">
+          <span (click)="routeTo(tab)">{{ tab }}</span>
+          <button (click)="closeTab(tab)"><i class="fa-solid fa-xmark close-icon"></i></button>
+        </div>
+      </div>
+      <div class="component">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+
+  </div>
+  <footer>
+   
+    <div class="footer-container">
+      <div>
+        <p>
+          <i class="fa-solid fa-at footer-icon"></i>
+        armin.vdng&#64;gmail.com | 
+      </p>
+      </div>
+
+      <div>
+        <p>
+          <i class="fa-regular fa-copyright footer-icon"></i>
+        Copyright Ármin Vndg. 2024 | All rights reserved.
+        </p>
+      </div>
+     
+    </div>
+  </footer>
+</main>
+
+
+

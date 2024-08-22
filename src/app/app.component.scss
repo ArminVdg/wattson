@@ -1,0 +1,408 @@
+
+html, body {
+  background-color: #27292b;
+}
+
+:host {
+  --tabwidth: 80px;
+
+  --aqua: aqua;
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--bright-blue) 0%,
+    var(--aqua) 50%,
+    var(--bright-blue) 100%
+  );
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--aqua) 0%,
+    var(--orange-red) 50%,
+    var(--bright-blue) 100%
+  );
+
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: orange;
+  }
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: inherit;
+  background-color: #27292b;
+}
+
+.logo {
+  max-width: 9.2rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+
+.content h1 {
+  margin-top: 1.75rem;
+  color: darkcyan;
+}
+
+.content p {
+  margin-top: 1.5rem;
+  color: darkcyan;
+}
+
+.divider {
+  width: 1px;
+  background: var(--red-to-pink-to-purple-vertical-gradient);
+  margin-inline: 0.5rem;
+}
+
+.left-side {
+  background-color: #2e3135;
+  width: 60px;
+  height: 95vh;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  align-items: center;
+  justify-content: center;
+}
+
+.menu .icon {
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  color: grey;
+}
+
+.right-side {
+  margin-left: 10px;
+  width: 96vw;
+}
+
+.tabs {
+  position: fixed;
+  top: 10px;
+  left: 80px;
+  display: flex;
+  flex-direction: row;
+  width: --tabwidth + 80px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  background-color: #2e3135;
+  width: --tabwidth;
+  padding: 20px;
+  border-bottom: none;
+
+  display: flex;
+  align-items: center;
+  
+  span {
+    color: orange;
+    font-size: 18px;
+  }
+
+  .active {
+    background-color: #27292b;
+  }
+
+}
+
+.tab button {
+  margin-left: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.component {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.active {
+  background-color: #27292b;
+
+   .icon {
+    color: orange;
+  }
+}
+
+.nav-link.active {
+  background-color: #27292b;
+}
+
+.nav-item:hover {
+  .icon {
+    background-color: #373a3d;
+  }
+}
+
+.close-icon {
+  color: rgb(221, 220, 220);
+  margin-left: 5px;
+}
+
+
+.close-icon:hover {
+  background-color: #2e3135;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+
+.footer-container {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+  p {
+    text-decoration: none;
+    color: grey;
+  }
+
+  .footer-icon {
+    width: 14px;
+    height: 14px;
+    color: grey;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer-container p, i {
+    font-size: 0.8rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 40px;
+
+    .icon {
+      color: grey;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .nav-item {
+    text-align: center;
+    text-decoration: none;
+  }
+
+}
+
+@media (max-width: 756px) {
+
+  .main {
+    height: 100%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+  
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: var(--red-to-pink-to-purple-vertical-gradient);
+    margin-inline: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    z-index: 1000;
+    cursor: pointer;
+    
+    .icon {
+      width: 23px;
+      height: 23px;
+      color: grey;
+    }
+
+    .icon:hover {
+      color: aqua;
+    }
+  }
+
+  .left-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px; /* Adjust height as needed for horizontal menu */
+    background-color: #2e3135;
+    transform: translateY(-100%); /* Initially hidden */
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .left-side.show {
+    transform: translateY(0); /* Slide down when .show class is applied */
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 40px;
+
+    .icon {
+      color: grey;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .nav-item {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .active {
+    background-color: #27292b;
+  
+     .icon {
+      color: orange;
+    }
+  }
+  
+  .nav-link.active {
+    background-color: #27292b;
+  }
+  
+  .nav-item:hover {
+    
+    .icon {
+      color: aqua;
+      background-color: transparent;
+    }
+  }
+
+  .tabs {
+    position: fixed;
+    top: 60px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    width: --tabwidth + 80px;
+    align-items: left;
+    justify-content: left;
+  }
+
+  .tab {
+    background-color: #2e3135;
+    width: --tabwidth;
+    padding: 10px;
+    border-bottom: none;
+  
+    display: flex;
+    align-items: center;
+    
+    span {
+      color: orange;
+      font-size: 14px;
+    }
+  }
+
+  .active {
+    background-color: inherit;
+  }
+  
+
+  .footer-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-side {
+    width: 100%;
+
+  }
+
+  .component {
+    margin-top: 80px;
+    width: 100%;
+  }
+}
+
+

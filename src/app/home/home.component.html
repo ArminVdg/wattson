@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="main-box">
+    <div class="full-width-terminal">
+      <div class="terminal-header">
+        <span>TERMINAL</span>
+        <div class="icon-box">
+          <span (click)="killTerminal()"><i class="fa-solid fa-trash-can console-header-icon"></i></span>
+          <span (click)="terminalOpen()"><i class="fa-solid fa-plus console-header-icon"></i></span>
+          <span (click)="closeTerminal()"><i class="fa-solid fa-xmark console-header-icon"></i></span>
+        </div>
+    
+      </div>
+      <div class="terminal-body">
+
+          <div class="typing-container" #typingContainer></div>
+          <div class="terminal-rectangle"></div>
+        </div>
+      </div>
+     </div>
+    
+   </div>
+  
+  
+
+  

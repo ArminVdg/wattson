@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  font-size: calc(16px + 0.5vw);
+  padding: 10%;
+  height: 87vh;
+}
+
+.icon {
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 50px;
+  width: 15%;
+}
+
+.left-side {
+  flex: 1 1 auto;
+  margin: 20px;
+}
+
+.content {
+  font-size: 1rem; /* Default font size */
+  color: #e3e4e4;
+}
+
+h1, h2 {
+  font-size: calc(1.0rem + 0.5vw); /* Responsive font size */
+}
+
+.references-icon {
+  width: 100%;
+  height: 100%;
+  color: rgba(29, 30, 31, 0.4);
+  z-index: 0;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color:  rgba(29, 30, 31, 0.4);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.card-title {
+  color: aqua;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  color: grey;
+}
+
+.card-icon {
+  background-color: none;
+  color: darkcyan;
+}
+
+.card-icon:hover {
+  color: orange;
+}
+
+@media (min-width: 1024px) and (max-width: 1790px) {
+
+  .main-container > div {
+    flex: 1 1 100%; /* One item per row */
+    margin: 10px 0;
+  }
+
+  .row > .card {
+    width: 40%;
+  } 
+
+  .icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+.main-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-container > div {
+  flex: 1 1 100%; /* One item per row */
+  margin: 10px 0;
+}
+
+.icon {
+  width: 30%;
+}
+
+.left-side {
+  width: 100%;
+}
+
+h1, h2, .title {
+  font-size: calc(1.2em + 0.3vw); /* Smaller font size for mobile */
+}
+
+.content {
+  align-items: center;
+  justify-content: center;
+}
+
+.content > .row {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.row > .card {
+  width: 100%;
+}
+
+.icon i {
+  font-size: calc(1.2em + 0.3vw); /* Smaller icon size for mobile */
+}
+}
+
+
+
+

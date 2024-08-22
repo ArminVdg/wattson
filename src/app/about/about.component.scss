@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  padding: 5%;
+  height: 87vh;
+}
+
+.icon {
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 10px;
+}
+
+
+.left-side,
+.right-side {
+  flex: 1 1 auto;
+  margin: 10px;
+}
+
+.content {
+  font-size: 0.9rem; /* Default font size */
+}
+
+/* Responsive Font Sizes */
+h1, h2, .title {
+  font-size: calc(1rem + 0.5vw); /* Responsive font size */
+}
+
+  .about-icon {
+    width: 100%;
+    height: 100%;
+    color: rgba(29, 30, 31, 0.4);
+    z-index: 0;
+  }
+
+  .content {
+    color: #e3e4e4;
+  }
+
+  span {
+    font-size: 2.5rem;
+  }
+    .indent {
+      margin-left: 20px;
+    }
+
+    .title {
+      font-family: 'Consolas';
+      color: aqua;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      color: aqua;
+    }
+
+    .cv-icon {
+      width: 20px;
+      height: 20px;
+      color: orange;
+    }
+
+    .btn-contact {
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(0, 255, 255, 0.2);
+      color: aqua;
+      font-size: 24px;
+      font-family: 'Consolas';
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .btn-contact:hover {
+      border: 1px solid aqua;
+      background-color: rgba(29, 30, 31, 0.4);
+    }
+
+    .btn-cv {
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(255, 165, 0, 0.4);
+     
+      padding: 10px;
+      margin-top: 20px;
+
+      a {
+        text-decoration: none;
+        color: orange;
+        font-size: 24px;
+        font-family: 'Consolas';
+      }
+    }
+
+    .btn-cv:hover {
+      border: 1px solid coral;
+      background-color: rgba(29, 30, 31, 0.4);
+
+      a {
+        color: coral;
+      }
+    }
+
+    p {
+      font-family: 'Consolas';
+      color: grey;
+      font-size: 18px;
+      line-height: 40px;
+    }
+  
+
+   /* Media Queries for Medium Screens (Tablets) */
+   @media (max-width: 1550px) and (min-width: 561px) {
+    .main-container {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-container > .left-side,
+    .main-container > .right-side {
+      flex: 0 0 40%; /* Adjust percentage as needed */
+      max-width: 40%;
+    }
+
+    .main-container > .icon {
+      width: 30%;
+      margin: 20px;
+      font-size: 1.0rem; /* Adjust icon size for medium screens */
+    }
+  
+    .content {
+      font-size: 0.9rem; /* Adjust font size for medium screens */
+    }
+  
+    h1, h2, .title {
+      font-size: calc(1.0rem + 0.8vw); /* Adjust responsive font size */
+    }
+  }
+
+@media (max-width: 560px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-container > div {
+    flex: 1 1 100%; /* One item per row */
+    margin: 10px 0;
+  }
+
+  .icon {
+    width: 30%;
+  }
+  .left-side,
+  .right-side {
+    width: 100%;
+  }
+
+  h1, h2, .title {
+    font-size: calc(1.2em + 0.3vw); /* Smaller font size for mobile */
+  }
+
+  h2 > .contact-icon {
+    width: 14px;
+  }
+
+  h2 > .cv-icon {
+    width: 14px;
+  }
+
+  .btn-contact, .btn-cv a {
+    font-size: calc(1.3em + 0.3vw); /* Smaller font size for mobile */
+  }
+
+  .icon i {
+    font-size: calc(1.2em + 0.3vw); /* Smaller icon size for mobile */
+  }
+}
