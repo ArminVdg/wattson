@@ -1,0 +1,39 @@
+name: Build and Deploy Angular to Hosting Provider
+
+on:
+  push:
+    branches:
+      - main # Adjust the branch name if you deploy from a different branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build Angular project
+      run: npm run build -- --prod
+
+    - name: Deploy via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: ${{ secrets.FTP_PORT }}
+        local-dir: dist/your-angular-app/
+        server-dir: ${{ secrets.FTP_TARGET_DIR }}
+        protocol: ftp # Change to sftp if your provider supports it
