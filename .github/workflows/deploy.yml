@@ -34,6 +34,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: ${{ secrets.FTP_PORT }}
-        local-dir: dist/your-angular-app/
+        local-dir: dist/rmnvndg/
         server-dir: ${{ secrets.FTP_TARGET_DIR }}
         protocol: ftp # Change to sftp if your provider supports it
